@@ -1,0 +1,13 @@
+{
+    "name": "once-bot",
+    "version": "1.0.0",
+    "description": "Once Human Discord Bot.",
+    "main": "src/bot.js",
+    "scripts": {
+        "start": "node src/bot.js"
+    },
+    "dependencies": {
+        "discord.js": "^14.3.0",
+        "dotenv": "^10.0.0"
+    }
+}
