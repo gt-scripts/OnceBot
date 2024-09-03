@@ -14,5 +14,4 @@ jobs:
           node-version: '16.x'
           cache: 'npm'
       - name: Install dependencies
-        working-directory: ./src
         run: npm install
