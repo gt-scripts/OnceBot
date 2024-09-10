@@ -48,7 +48,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.GT_DH_USERNAME }}/${{ github.event.repository.name }}
+          images: ${{ secrets.GT_DH_USERNAME }}/oncebot
 
       - name: Build and push
         id: build
@@ -57,7 +57,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.GT_DH_USERNAME }}/${{ github.event.repository.name }}:latest
+          tags: ${{ secrets.GT_DH_USERNAME }}/oncebot:latest
 
       - name: Update Repo Description
         id: repo
@@ -65,7 +65,7 @@ jobs:
         with:
           username: ${{ secrets.GT_DH_USERNAME }}
           password: ${{ secrets.GT_DH_TOKEN }}
-          repository: ${{ secrets.GT_DH_USERNAME }}/${{ github.event.repository.name }}
+          repository: ${{ secrets.GT_DH_USERNAME }}/oncebot
 
       - name: Get commit messages, version, and repository description
         id: get_project_information
