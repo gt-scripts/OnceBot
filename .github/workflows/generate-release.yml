@@ -13,7 +13,6 @@ jobs:
   build_and_release:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.get_project_information.outputs.version }}
       release_body: ${{ steps.prepare_release_body.outputs.body }}
     steps:
       - name: Checkout code
@@ -103,7 +102,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: release
         with:
-          tag_name: "${{ steps.get_project_information.outputs.version }}"
+          tag_name: "${{ github.ref_name }}"
           release_name: "${{ steps.get_project_information.outputs.version }}"
           body_path: release_body.txt
           draft: false
