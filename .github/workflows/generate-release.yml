@@ -138,7 +138,7 @@ jobs:
               {
                 "name": "Veja todas as mudanças",
                 "value": "[Veja todas as mudanças aqui](https://github.com/${{ github.repository }}/commits/${{ github.ref_name }})"
-              },
+              }],
               "color": 4243543,
               "footer": {
                   "text": "Realizado por: '"${RELEASE_AUTHOR}"'",
