@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  once-bot:
+    build: .
+    container_name: once-bot
+    restart: unless-stopped
+
+    # Variáveis de ambiente
+    environment:
+      - DATA_DIR=/app/data
+      # Adicione outras variáveis conforme necessário
+      # - DISCORD_TOKEN=${DISCORD_TOKEN}
+      # - CLIENT_ID=${CLIENT_ID}
+
+    # Carrega variáveis do arquivo .env
+    env_file:
+      - .env
+
+    # Volume para dados persistentes
+    volumes:
+      - ./bot-data:/app/data
+      # Opcional: volume para logs
+      # - ./logs:/app/logs
+
+    # Configurações de rede (se necessário)
+    # networks:
+    #   - bot-network
+
+# Redes personalizadas (se necessário)
+# networks:
+#   bot-network:
+#     driver: bridge
+
+# Volumes nomeados alternativos
+# volumes:
+#   bot-data:
+#     driver: local

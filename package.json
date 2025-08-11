@@ -4,7 +4,11 @@
     "description": "Once Human Discord Bot.",
     "main": "src/bot.js",
     "scripts": {
-        "start": "node src/bot.js"
+        "start": "node src/bot.js",
+        "deploy": "node deploy-commands.js",
+        "deploy:clear": "node deploy-commands.js clear",
+        "deploy:guild": "node deploy-commands.js guild",
+        "deploy:clear-guild": "node deploy-commands.js clear-guild"
     },
     "dependencies": {
         "discord.js": "^14.21.0",
